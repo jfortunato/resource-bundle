@@ -1,6 +1,6 @@
 <?php
 
-namespace JFortunato\ResourceBundle\Voter;
+namespace Fortune\ResourceBundle\Voter;
 
 use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace JFortunato\ResourceBundle\Manager;
+namespace Fortune\ResourceBundle\Manager;
 
 use Doctrine\Common\Persistence\ObjectManager;
 

@@ -1,18 +1,18 @@
 parameters:
-    jfortunato.manager.resource.class: JFortunato\ResourceBundle\Manager\ResourceManager
-    jfortunato.access.resource_voter.class: JFortunato\ResourceBundle\Voter\ResourceVoter
-    jfortunato.access.resource_voter.resource_config: # set in extension
+    fortune.manager.resource.class: Fortune\ResourceBundle\Manager\ResourceManager
+    fortune.access.resource_voter.class: Fortune\ResourceBundle\Voter\ResourceVoter
+    fortune.access.resource_voter.resource_config: # set in extension
 
 services:
-    jfortunato.manager.resource:
-        class: %jfortunato.manager.resource.class%
+    fortune.manager.resource:
+        class: %fortune.manager.resource.class%
         arguments:
             - @doctrine.orm.entity_manager
 
-    jfortunato.access.resource_voter:
-        class: %jfortunato.access.resource_voter.class%
+    fortune.access.resource_voter:
+        class: %fortune.access.resource_voter.class%
         public: false
         arguments:
-            - %jfortunato.access.resource_voter.resource_config%
+            - %fortune.access.resource_voter.resource_config%
         tags:
             - { name: security.voter }

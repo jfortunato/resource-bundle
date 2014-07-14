@@ -1,6 +1,6 @@
 <?php
 
-namespace JFortunato\ResourceBundle\Voter;
+namespace Fortune\ResourceBundle\Voter;
 
 interface ResourceOwnerCheckerInterface
 {

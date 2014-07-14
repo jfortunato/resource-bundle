@@ -1,6 +1,6 @@
 <?php
 
-namespace JFortunato\ResourceBundle\Controller;
+namespace Fortune\ResourceBundle\Controller;
 
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,9 +13,9 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use FOS\RestBundle\Util\Codes;
-use JFortunato\ResourceBundle\Voter\ResourceVoter;
-use JFortunato\ResourceBundle\Manager\ResourceManager;
-use JFortunato\ResourceBundle\Exception\InvalidFormException;
+use Fortune\ResourceBundle\Voter\ResourceVoter;
+use Fortune\ResourceBundle\Manager\ResourceManager;
+use Fortune\ResourceBundle\Exception\InvalidFormException;
 
 abstract class ResourceController extends FOSRestController
 {

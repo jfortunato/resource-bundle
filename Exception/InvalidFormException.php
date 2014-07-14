@@ -1,6 +1,6 @@
 <?php
 
-namespace JFortunato\ResourceBundle\Exception;
+namespace Fortune\ResourceBundle\Exception;
 
 class InvalidFormException extends \RuntimeException
 {

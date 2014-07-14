@@ -14,7 +14,7 @@
         "friendsofsymfony/rest-bundle": "~1.4"
     },
     "autoload": {
-        "psr-4": { "JFortunato\\ResourceBundle\\": ""}
+        "psr-4": { "Fortune\\ResourceBundle\\": ""}
     },
     "suggest": {
         "nelmio/api-doc-bundle": "Free documentation for your API"

@@ -1,6 +1,6 @@
 <?php
 
-namespace JFortunato\ResourceBundle\DependencyInjection;
+namespace Fortune\ResourceBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\Definition;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class JFortunatoResourceExtension extends Extension
+class FortuneResourceExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -30,7 +30,7 @@ class JFortunatoResourceExtension extends Extension
         $resources = isset($config['resources']) ? $config['resources']:array();
 
         // set the resource voter config argument
-        $container->setParameter('jfortunato.access.resource_voter.resource_config', $resources);
+        $container->setParameter('fortune.access.resource_voter.resource_config', $resources);
 
         // create the RESTful resource controllers
         $this->createControllerServices($resources, $container);
@@ -40,19 +40,19 @@ class JFortunatoResourceExtension extends Extension
     {
         foreach ($resources as $name => $config) {
             // set the form type service first, we'll use it in the controller
-            $container->setDefinition(sprintf('jfortunato.form.%s', $name), new Definition($config['form_type']));
+            $container->setDefinition(sprintf('fortune.form.%s', $name), new Definition($config['form_type']));
 
             $definition = new Definition($config['controller']);
             $definition->setArguments(array(
                 $config['entity'],
-                new Reference('jfortunato.form.' . $name),
-                new Reference('jfortunato.manager.resource'),
+                new Reference('fortune.form.' . $name),
+                new Reference('fortune.manager.resource'),
                 new Reference('form.factory'),
                 new Reference('security.context'),
                 new Reference('fos_rest.view_handler'),
             ));
 
-            $container->setDefinition(sprintf('jfortunato.controller.%s', $name), $definition);
+            $container->setDefinition(sprintf('fortune.controller.%s', $name), $definition);
         }
     }
 }
