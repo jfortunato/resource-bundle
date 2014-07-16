@@ -11,10 +11,19 @@
         }
     ],
     "require": {
-        "friendsofsymfony/rest-bundle": "~1.4"
+        "friendsofsymfony/rest-bundle": "~1.4",
+        "jms/serializer-bundle": "0.12.*",
+        "symfony/form": "*",
+        "phpspec/phpspec": "~2.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master"
     },
     "autoload": {
-        "psr-4": { "Fortune\\ResourceBundle\\": ""}
+        "psr-4": {
+            "Fortune\\ResourceBundle\\": "",
+            "Fortune\\Tests\\": "tests/"
+        }
     },
     "suggest": {
         "nelmio/api-doc-bundle": "Free documentation for your API"
