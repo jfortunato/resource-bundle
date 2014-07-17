@@ -14,7 +14,6 @@
         "friendsofsymfony/rest-bundle": "~1.4",
         "jms/serializer-bundle": "0.12.*",
         "symfony/form": "*",
-        "phpspec/phpspec": "~2.0"
     },
     "require-dev": {
         "mockery/mockery": "dev-master"
