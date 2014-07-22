@@ -107,7 +107,7 @@ abstract class ResourceController extends FOSRestController
             return $resources;
         }
 
-        if (!$this->securityContext->isGranted(ResourceVoter::VIEW_ALL, $resources[0])) {
+        if ($this->securityContext->getToken() && !$this->securityContext->isGranted(ResourceVoter::VIEW_ALL, $resources[0])) {
             throw new AccessDeniedException;
         }
 
@@ -122,7 +122,7 @@ abstract class ResourceController extends FOSRestController
             throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
         }
 
-        if (!$this->securityContext->isGranted(ResourceVoter::VIEW_SINGLE, $resource)) {
+        if ($this->securityContext->getToken() && !$this->securityContext->isGranted(ResourceVoter::VIEW_SINGLE, $resource)) {
             throw new AccessDeniedException;
         }
 
@@ -138,7 +138,7 @@ abstract class ResourceController extends FOSRestController
             throw new InvalidFormException('Invalid submitted data.', $form);
         }
 
-        if (!$this->securityContext->isGranted(ResourceVoter::CREATE, $resource)) {
+        if ($this->securityContext->getToken() && !$this->securityContext->isGranted(ResourceVoter::CREATE, $resource)) {
             throw new AccessDeniedException;
         }
 
@@ -154,7 +154,7 @@ abstract class ResourceController extends FOSRestController
             throw new InvalidFormException('Invalid submitted data.', $form);
         }
 
-        if (!$this->securityContext->isGranted(ResourceVoter::EDIT, $resource)) {
+        if ($this->securityContext->getToken() && !$this->securityContext->isGranted(ResourceVoter::EDIT, $resource)) {
             throw new AccessDeniedException;
         }
 
@@ -165,7 +165,7 @@ abstract class ResourceController extends FOSRestController
     {
         $resource = $this->findOr404($id);
 
-        if (!$this->securityContext->isGranted(ResourceVoter::DELETE, $resource)) {
+        if ($this->securityContext->getToken() && !$this->securityContext->isGranted(ResourceVoter::DELETE, $resource)) {
             throw new AccessDeniedException;
         }
 
