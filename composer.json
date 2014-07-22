@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "friendsofsymfony/rest-bundle": "~1.4",
-        "jms/serializer-bundle": "0.12.*",
-        "symfony/form": "*"
+        "friendsofsymfony/rest-bundle": "~1.2",
+        "jms/serializer-bundle": "~0.12",
+        "symfony/form": "~2.1"
     },
     "require-dev": {
         "mockery/mockery": "dev-master"
